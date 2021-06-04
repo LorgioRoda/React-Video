@@ -3,11 +3,10 @@ import "../assets/styles/Components/CarouselItem.scss";
 
 export default function CarouselItem() {
   return (
-    <>
       <div className="carousel-item">
         <img
           className="carousel-item__img"
-          src="https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          src="https://images-na.ssl-images-amazon.com/images/I/81-6K6AdkCL._AC_SL1500_.jpg"
           alt=""
         />
         <div className="carousel-item__details">
@@ -29,6 +28,5 @@ export default function CarouselItem() {
           </p>
         </div>
       </div>
-    </>
   );
 }

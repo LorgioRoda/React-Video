@@ -38,6 +38,15 @@ module.exports = {
           "sass-loader",
         ],
       },
+      {
+        test: /\.(png|gif|jpg)$/, //cualquier elemento que tenga estos elementos
+        use: [  //configuracion
+          {
+            loader: "file-loader",  //npm pack
+            options: { name: "assets/[hash].[ext]" }, //aplicamos el nombre con hash y respete la extension
+          },
+        ],
+      },
     ],
   },
   plugins: [
