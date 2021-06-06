@@ -1,10 +1,11 @@
+@import "./Vars.scss";
+@import "./Media.scss";
 body {
-    margin: 0;
-    font-family: 'Muli', sans-serif;
-    background: #141414;
-  }
+  margin: 0;
+  font-family: $theme-font;
+  background: $main-color;
+}
 
-  * {
-    box-sizing: border-box;
-    color: #f25038;
-  }
+* {
+  box-sizing: border-box;
+}

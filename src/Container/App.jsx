@@ -12,7 +12,7 @@ export default function App() {
       <Header />
       <Search />
 
-      <Categories>
+      <Categories title="My list">
         <Carousel>
           <CarouselItem />
           <CarouselItem />
@@ -21,7 +21,25 @@ export default function App() {
         </Carousel>
       </Categories>
 
-      <Footer/>
+      <Categories title="Tendencias">
+        <Carousel>
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+        </Carousel>
+      </Categories>
+
+      <Categories title="Original">
+        <Carousel>
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+        </Carousel>
+      </Categories>
+
+      <Footer />
     </div>
   );
 }
