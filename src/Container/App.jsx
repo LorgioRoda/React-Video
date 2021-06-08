@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Carousel from "../Components/Carousel";
 import CarouselItem from "../Components/CarouselItem";
 import Categories from "../Components/Categories";
@@ -6,9 +6,17 @@ import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import Search from "../Components/Search";
 
-export default function App() {
+const App = () => {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/initalState")
+      .then(response => response.json())
+      .then(data => setVideos(data));
+  }, []);
+  console.log(videos);
   return (
-    <div>
+    <div className="App">
       <Header />
       <Search />
 
@@ -42,4 +50,6 @@ export default function App() {
       <Footer />
     </div>
   );
-}
+};
+
+export default App;
