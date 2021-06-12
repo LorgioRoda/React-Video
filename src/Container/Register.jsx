@@ -1,4 +1,5 @@
 import React from 'react'
+import "../assets/styles/Components/Register.scss"
 
 export default function Register() {
     return (
