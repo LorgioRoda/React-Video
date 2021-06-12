@@ -36,12 +36,12 @@ const Home = ({ mylist, trends, originals }) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     mylist: state.mylist,
     trends: state.trends,
-    originals: state.originals,        //only necessary components
-  }
-}
+    originals: state.originals, //only necessary components
+  };
+};
 
 export default connect(mapStateToProps, null)(Home); //map the contect and actions

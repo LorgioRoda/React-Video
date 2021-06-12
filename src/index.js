@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux"; //add redux
 import { createStore } from "redux";
 import App from "./routes/App";
-import reducer from './reducers/index'
+import reducer from "./reducers/index";
 import "./assets/styles/App.scss";
 
 const initialState = {
@@ -172,10 +172,12 @@ const initialState = {
   ],
 };
 
-const store = createStore(reducer, initialState)
+const store = createStore(reducer, initialState);
 
 ReactDOM.render(
-  <Provider store={store}> {/* connect app with store and reducer */}
+  <Provider store={store}>
+    {" "}
+    {/* connect app with store and reducer */}
     <App />
   </Provider>,
   document.getElementById("app")

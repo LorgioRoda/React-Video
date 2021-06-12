@@ -40,16 +40,18 @@ module.exports = {
       },
       {
         test: /\.(png|gif|jpg)$/, //cualquier elemento que tenga estos elementos
-        use: [  //configuracion
+        use: [
+          //configuracion
           {
-            loader: "file-loader",  //npm pack
+            loader: "file-loader", //npm pack
             options: { name: "assets/[hash].[ext]" }, //aplicamos el nombre con hash y respete la extension
           },
         ],
       },
     ],
   },
-  devServer: { //routes
+  devServer: {
+    //routes
     historyApiFallback: true,
   },
   plugins: [
