@@ -5,15 +5,14 @@ import Categories from "../Components/Categories";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import Search from "../Components/Search";
-import useInitialState from "../hooks/useInitialState"
+import useInitialState from "../hooks/useInitialState";
 
-const API = "http://localhost:3000/initalState"
+const API = "http://localhost:3000/initalState";
 
 const Home = () => {
-  const initialState = useInitialState(API)
+  const initialState = useInitialState(API);
   return (
-    <div className="App">
-      <Header />
+    <>
       <Search />
       {initialState.mylist.length > 0 && (
         <Categories title="My list">
@@ -33,14 +32,12 @@ const Home = () => {
 
       <Categories title="Original">
         <Carousel>
-        {initialState.originals.map((item)=> (
-          <CarouselItem key={item.id} {...item}/>
+          {initialState.originals.map((item) => (
+            <CarouselItem key={item.id} {...item} />
           ))}
         </Carousel>
       </Categories>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 
