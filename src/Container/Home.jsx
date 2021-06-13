@@ -13,7 +13,7 @@ const Home = ({ mylist, trends, originals }) => {
         <Categories title="Mis videos">
           <Carousel>
             {mylist.map((item) => (
-              <CarouselItem key={item.id} {...item} isList />
+              <CarouselItem key={item.id} {...item} isList /> //validation
             ))}
           </Carousel>
         </Categories>
