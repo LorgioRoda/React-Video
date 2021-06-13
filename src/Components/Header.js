@@ -5,7 +5,6 @@ import logo from "../../src/assets/static/React-video.png";
 import userIcon from "../../src/assets/static/user-icon.png";
 export default function Header() {
   return (
-    <>
       <header className="header">
         <Link to="/">
           <img className="header__img" src={logo} alt="React Video" />
@@ -28,6 +27,5 @@ export default function Header() {
           </ul>
         </div>
       </header>
-    </>
   );
 }

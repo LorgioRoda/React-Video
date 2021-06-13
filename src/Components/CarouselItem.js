@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setFavorie } from "../actions/index";
+import { setFavorie } from "../actions";
 import PropTypes from "prop-types";
 import "../assets/styles/Components/CarouselItem.scss";
 import playIcon from "../assets/static/play-icon.png";
@@ -55,4 +55,4 @@ const mapDispatchToProps = {
   setFavorie,
 };
 
-export default connect(null, mapDispatchToProps)(CarouselItem);
+export default connect(null, mapDispatchToProps)(CarouselItem); /*  el estado de redux a los pros de este componentes y las acciones para modificar el estado para pasar como props a este componente */

@@ -10,13 +10,14 @@ const Home = ({ mylist, trends, originals }) => {
     <>
       <Search />
       {mylist.length > 0 && (
-        <Categories title="My list">
+        <Categories title="Mis videos">
           <Carousel>
-            <CarouselItem />
+            {mylist.map((item) => (
+              <CarouselItem key={item.id} {...item} isList />
+            ))}
           </Carousel>
         </Categories>
       )}
-
       <Categories title="Trends">
         <Carousel>
           {trends.map((item) => (
