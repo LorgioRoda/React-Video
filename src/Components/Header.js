@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom"; //Link
 import "../assets/styles/Components/Header.scss";
 import logo from "../../src/assets/static/React-video.png";
