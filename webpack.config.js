@@ -39,7 +39,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|gif|jpg)$/, //cualquier elemento que tenga estos elementos
+        test: /\.(png|gif|jpg)$/,
         use: [
           //configuracion
           {
