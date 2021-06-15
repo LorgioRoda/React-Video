@@ -4,6 +4,7 @@ import Layout from "../Components/Layout";
 import Home from "../Container/Home";
 import Login from "../Container/Login";
 import NotFound from "../Container/NotFound";
+import Player from "../Container/Player";
 import Register from "../Container/Register";
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/player/:id" component={Player} />
             <Route component={NotFound} />
           </Switch>
         </Layout>
