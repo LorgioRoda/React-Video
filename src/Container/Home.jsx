@@ -5,6 +5,7 @@ import CarouselItem from "../Components/CarouselItem";
 import Categories from "../Components/Categories";
 import Search from "../Components/Search";
 import Header from "../Components/Header"
+import "../assets/styles/App.scss"
 
 const Home = ({ mylist, trends, originals }) => {
   return (
@@ -12,7 +13,7 @@ const Home = ({ mylist, trends, originals }) => {
       <Header />
       <Search isHome/>
       {mylist.length > 0 && (
-        <Categories title="Mis videos">
+        <Categories title="Mys videos">
           <Carousel>
             {mylist.map((item) => (
               <CarouselItem key={item.id} {...item} isList /> //validation
@@ -27,7 +28,6 @@ const Home = ({ mylist, trends, originals }) => {
           ))}
         </Carousel>
       </Categories>
-
       <Categories title="Original">
         <Carousel>
           {originals.map((item) => (
