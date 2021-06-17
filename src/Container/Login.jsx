@@ -64,7 +64,7 @@ function Login(props) {
             </div>
           </section>
           <p className="login__container--register">
-            No tienes ninguna cuenta
+            No tienes ninguna cuenta {' '}  {/* Aqui generamos un espacio */}
             <Link to="/register">Register</Link>
           </p>
         </section>
