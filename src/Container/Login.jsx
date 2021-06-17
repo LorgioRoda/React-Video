@@ -28,7 +28,7 @@ function Login(props) {
     <Header isLogin/>
       <section className="login">
         <section className="login__container">
-          <h2>Inicia sesión</h2>
+          <h2>Login</h2>
           <form className="login__container--form" onSubmit={handleSubmit}>
             <input
               name="email"
@@ -45,14 +45,14 @@ function Login(props) {
               onChange={handleInput}
             />
             <button type="submit" className="button">
-              Iniciar sesión
+              Login
             </button>
             <div className="login__container--remember-me">
               <label>
                 <input type="checkbox" id="cbox1" value="first_checkbox" />
                 Recuérdame
               </label>
-              <a href="/">Olvidé mi contraseña</a>
+              <a href="/">I forgot my password</a>
             </div>
           </form>
           <section className="login__container--social-media">

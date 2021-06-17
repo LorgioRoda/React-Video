@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 0px 30px;
+  padding: 50px;
   min-height: calc(
     100vh - 200px
   );
@@ -23,6 +23,11 @@
   padding: 60px 68px 40px;
 }
 
+.login__container h2{
+  text-align: center;
+  font-size: 3rem;
+}
+
 .login__container--form {
   display: flex;
   flex-direction: column;
@@ -36,12 +41,12 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .login__container--remember-me a {
   color: white;
-  font-size: 14px;
+  font-size: 13px;
   text-decoration: none;
 }
 
