@@ -8,7 +8,7 @@ import logo from "../../src/assets/static/React-video.png";
 import userIcon from "../../src/assets/static/user-icon.png";
 function Header(props) {
   const { user = {} } = props;
-  const hasUser = Object.keys(user).length > 0; // para comprobrar un objeto si tiene un elemento on object.key
+  const hasUser = Object.keys(user).length > 0; // para comprobrar un objeto si tiene un elemento on object.keys
 
   const handleLogout = () => {
     props.logoutRequest({}); //logout simulate
