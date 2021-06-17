@@ -4,10 +4,12 @@ import Carousel from "../Components/Carousel";
 import CarouselItem from "../Components/CarouselItem";
 import Categories from "../Components/Categories";
 import Search from "../Components/Search";
+import Header from "../Components/Header"
 
 const Home = ({ mylist, trends, originals }) => {
   return (
     <>
+      <Header />
       <Search />
       {mylist.length > 0 && (
         <Categories title="Mis videos">
