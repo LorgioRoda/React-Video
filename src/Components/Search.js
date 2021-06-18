@@ -1,16 +1,35 @@
 import React, {useState} from "react";
-import "../assets/styles/Components/Search.scss";
+import { connect } from "react-redux";
+import { getSearchVideo } from "../actions/index"
 import classNames from "classnames"
-export default function Search({isHome, props}) {
+import "../assets/styles/Components/Search.scss";
+
+function Search(props) {
+    const { isHome, getSearchVideo } = props
     const inputStyle = classNames('input', {
         isHome,
-    })
-    const [search, setSearch] = useState('');
+    });
+
+    const handleInput = (event) => {
+        getSearchVideo(event.target.value);
+    }
 
     return (
       <section className="main">
         <h2 className="main__title">¿Qué quieres ver hoy?</h2>
-        <input type="text" className={inputStyle} placeholder="Search..." onChange={ e => setSearch(e.target.value)} />
+        <input type="text" className={inputStyle} placeholder="Search..." onChange={handleInput} />
       </section>
   );
+};
+
+const mapStateToProps = state => {
+    return{
+        searchResult: state.searchResult
+    }
 }
+
+const mapDispatchProps = { //action
+    getSearchVideo,
+}
+
+export default connect(mapStateToProps,mapDispatchProps)(Search)

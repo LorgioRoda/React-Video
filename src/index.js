@@ -8,6 +8,7 @@ import "./assets/styles/App.scss";
 
 const initialState = {
   user: {},
+  searchResult: [],
   playing: {},
   mylist: [],
   trends: [
