@@ -8,7 +8,6 @@ import Header from "../Components/Header";
 import "../assets/styles/App.scss";
 
 const Home = ({ mylist, trends, originals, searchResult}) => {
-  console.log({ mylist, trends, originals, searchResult})
   return (
     <>
       <Header />
