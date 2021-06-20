@@ -177,8 +177,6 @@ const store = createStore(reducer, initialState, composeEnhancers());
 
 ReactDOM.render(
   <Provider store={store}>
-    {" "}
-    {/* connect app with store and reducer */}
     <App />
   </Provider>,
   document.getElementById("app")

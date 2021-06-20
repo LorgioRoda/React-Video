@@ -31,4 +31,4 @@ const mapDispatchToProps = {
     getVideoSource,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Player) //props
+export default connect(mapStateToProps, mapDispatchToProps)(Player)

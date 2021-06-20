@@ -75,9 +75,4 @@ const mapDispatchToProps = {
   deleteFavorite,
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(
-  CarouselItem
-); /*  el estado de redux a los pros de este componentes y las acciones para modificar el estado para pasar como props a este componente */
+export default connect(null, mapDispatchToProps)(CarouselItem);

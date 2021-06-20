@@ -6,23 +6,21 @@ import { logoutRequest } from "../actions";
 import "../assets/styles/Components/Header.scss";
 import logo from "../../src/assets/static/React-video.png";
 import userIcon from "../../src/assets/static/user-icon.png";
-import classNames from "classnames"; //pack for validations
+import classNames from "classnames";
 function Header(props) {
   const { user, isLogin, isRegister = {} } = props;
-  const hasUser = Object.keys(user).length > 0; // para comprobrar un objeto si tiene un elemento on object.keys
+  const hasUser = Object.keys(user).length > 0;
 
   const handleLogout = () => {
-    props.logoutRequest({}); //logout simulate
+    props.logoutRequest({});
   };
   const headerClass = classNames("header", {
-    //primero paso el div o contenedor principal y luego la logica
     isLogin,
     isRegister,
   });
   return (
     <header className={headerClass}>
       {" "}
-      {/* Aqui agregamos la logica en nuestro contenedor */}
       <Link to="/">
         <img className="header__img" src={logo} alt="React Video" />
       </Link>
