@@ -1,20 +1,19 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: [
+    "./src/frontend/index.js",
+    "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true",
+  ],
+  mode: "development",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     publicPath: "/",
   },
-  devServer: {
-    open: true,
-    hot: true,
-    port: 3001,
-  },
-  mode: "development",
   resolve: {
     extensions: [".js", ".jsx"],
   },
@@ -23,11 +22,17 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: "babel-loader",
+        use: {
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.html$/,
-        use: "html-loader",
+        use: [
+          {
+            loader: "html-loader",
+          },
+        ],
       },
       {
         test: /\.(s*)css$/,
@@ -42,25 +47,25 @@ module.exports = {
       {
         test: /\.(png|gif|jpg)$/,
         use: [
-          //configuracion
           {
-            loader: "file-loader", //npm pack
-            options: { name: "assets/[hash].[ext]" }, //aplicamos el nombre con hash y respete la extension
+            loader: "file-loader",
+            options: {
+              name: "assets/[hash].[ext]",
+            },
           },
         ],
       },
     ],
   },
   devServer: {
-    //routes
     historyApiFallback: true,
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebPackPlugin({
-      template: "public/index.html",
-      filename: "index.html",
+      template: "./public/index.html",
+      filename: "./index.html",
     }),
-
     new MiniCssExtractPlugin({
       filename: "assets/[name].css",
     }),

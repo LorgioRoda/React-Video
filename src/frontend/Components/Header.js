@@ -4,8 +4,8 @@ import { Link } from "react-router-dom"; //Link
 import gravatar from "../utils/gravatar";
 import { logoutRequest } from "../actions";
 import "../assets/styles/Components/Header.scss";
-import logo from "../../src/assets/static/React-video.png";
-import userIcon from "../../src/assets/static/user-icon.png";
+import logo from "../assets/static/React-video.png";
+import userIcon from "../assets/static/user-icon.png";
 import classNames from "classnames";
 function Header(props) {
   const { user, isLogin, isRegister = {} } = props;
