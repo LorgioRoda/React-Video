@@ -1,7 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: [
@@ -16,6 +15,10 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx"],
+  },
+  performance: {
+    maxAssetSize: 1000000,
+    hints: false
   },
   module: {
     rules: [
@@ -62,10 +65,6 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      filename: './index.html',
-    }),
     new MiniCssExtractPlugin({
       filename: "assets/app.css",
     }),
