@@ -5,7 +5,7 @@ import "../assets/styles/Components/Login.scss";
 import googleIcon from "../assets/static/google-icon.png";
 import twitterIcon from "../assets/static/twitter-icon.png";
 import { Link } from "react-router-dom";
-import Header from "../Components/Header"
+import Header from "../Components/Header";
 
 function Login(props) {
   const [form, setValue] = useState({
@@ -19,13 +19,13 @@ function Login(props) {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); //siempre para matar el comportamiento de html
+    event.preventDefault();
     props.loginRequest(form);
-    props.history.push("/"); //redirect home
+    props.history.push("/");
   };
   return (
-    <> {/* React.Fragment for Header */}
-    <Header isLogin/>
+    <>
+      <Header isLogin />
       <section className="login">
         <section className="login__container">
           <h2>Login</h2>
@@ -64,8 +64,7 @@ function Login(props) {
             </div>
           </section>
           <p className="login__container--register">
-            No tienes ninguna cuenta {' '}  {/* Aqui generamos un espacio */}
-            <Link to="/register">Register</Link>
+            No tienes ninguna cuenta <Link to="/register">Register</Link>
           </p>
         </section>
       </section>

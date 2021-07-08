@@ -15,18 +15,18 @@ const Home = ({ mylist, trends, originals, searchResult}) => {
       {searchResult.length > 0 && (
         <Categories title="Your search">
           <Carousel>
-            {searchResult.map((item => (
+            {searchResult.map((item) => (
               <CarouselItem key={item.id} {...item} />
-            )))}
+            ))}
           </Carousel>
         </Categories>
       )}
       {mylist.length > 0 && (
         <Categories title="Mys videos">
           <Carousel>
-            {mylist.map((item => (
-              <CarouselItem key={item.id} {...item} isList /> //validation
-            )))}
+            {mylist.map((item) => (
+              <CarouselItem key={item.id} {...item} isList />
+            ))}
           </Carousel>
         </Categories>
       )}
@@ -53,9 +53,8 @@ const mapStateToProps = (state) => {
     mylist: state.mylist,
     searchResult: state.searchResult,
     trends: state.trends,
-    originals: state.originals, //only necessary components
+    originals: state.originals,
   };
 };
 
-
-export default connect(mapStateToProps, null)(Home); //map the contect and actions
+export default connect(mapStateToProps, null)(Home);
