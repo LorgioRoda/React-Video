@@ -32,7 +32,7 @@ const setResponse = (html) => {
     <html>
       <head>
         <link rel="stylesheet" href="assets/app.css" type="text/css">
-        <title>Platzi Video</title>
+        <title>React Video</title>
       </head>
       <body>
         <div id="app">${html}</div>
