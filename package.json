@@ -45,6 +45,7 @@
     "webpack-manifest-plugin": "^3.1.1"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "compression-webpack-plugin": "^3.1.0",
     "css-loader": "^5.2.6",
     "file-loader": "5.1.0",
