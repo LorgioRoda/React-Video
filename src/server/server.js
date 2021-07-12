@@ -25,9 +25,11 @@ if (ENV === "development") {
 
   app.use(webpackDevMiddleware(compiler, serverConfig));
   app.use(webpackHotMiddleware(compiler));
+} else {
+  app.use(express.static(`${__dirname}/public`))
 }
 const setResponse = (html, preloadedState) => {
-  return (`
+  return `
   <!DOCTYPE html>
     <html>
       <head>
@@ -37,12 +39,15 @@ const setResponse = (html, preloadedState) => {
       <body>
         <div id="app">${html}</div>
         <script>
-          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
+            /</g,
+            "\\u003c"
+          )}
         </script>
         <script src="assets/app.js" type="text/javascript"></script>
       </body>
   </html>
-  `);
+  `;
 };
 
 const renderApp = (req, res) => {
