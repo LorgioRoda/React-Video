@@ -100,9 +100,6 @@ module.exports = {
           filename: "[path][base].gz",
         }),
     isDev ? () => {} : new WebpackManifestPlugin(),
-    new MiniCssExtractPlugin({
-      filename: isDev ? "assets/app.css" : "assets/app-[hash].css",
-    }),
     isDev
       ? () => {}
       : new CleanWebpackPlugin({
@@ -111,5 +108,8 @@ module.exports = {
             "src/server/public"
           ),
         }),
+    new MiniCssExtractPlugin({
+      filename: isDev ? "assets/app.css" : "assets/app-[hash].css",
+    }),
   ],
 };

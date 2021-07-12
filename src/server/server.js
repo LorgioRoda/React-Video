@@ -38,27 +38,27 @@ if (ENV === "development") {
   app.disable('x-powered-by');
 }
 const setResponse = (html, preloadedState, manifest) => {
-  const mainStylest = manifest ? manifest['main.css'] : 'assets/app.css';
+  const mainStyles = manifest ? manifest['vendors.css'] : 'assets/vendor.css';
   const mainBuild = manifest ? manifest['main.js'] : 'assets/app.js';
-  return `
+  const vendorBuild = manifest ? manifest['vendors.js'] : 'assets/vendor.js';
+
+  return (`
   <!DOCTYPE html>
-    <html>
-      <head>
-        <link rel="stylesheet" href="${mainStylest}" type="text/css">
-        <title>React Video</title>
-      </head>
-      <body>
-        <div id="app">${html}</div>
-        <script>
-          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
-            /</g,
-            "\\u003c"
-          )}
-        </script>
-        <script src="${mainBuild}" type="text/javascript"></script>
-      </body>
+  <html>
+    <head>
+      <link rel="stylesheet" href="${mainStyles}" type="text/css">
+      <title>Platzi Video</title>
+    </head>
+    <body>
+      <div id="app">${html}</div>
+      <script>
+        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+      </script>
+      <script src="${mainBuild}" type="text/javascript"></script>
+      <script src="${vendorBuild}" type="text/javascript"></script>
+    </body>
   </html>
-  `;
+  `);
 };
 
 const renderApp = (req, res) => {
