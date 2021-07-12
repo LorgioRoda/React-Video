@@ -41,7 +41,8 @@
     "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.1.0",
-    "webpack": "^5.39.1"
+    "webpack": "^5.39.1",
+    "webpack-manifest-plugin": "^3.1.1"
   },
   "devDependencies": {
     "compression-webpack-plugin": "^3.1.0",
