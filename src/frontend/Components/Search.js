@@ -1,12 +1,12 @@
-import React from "react";
-import { connect } from "react-redux";
-import { getSearchVideo } from "../actions/index";
-import classNames from "classnames";
-import "../assets/styles/Components/Search.scss";
+import React from 'react';
+import { connect } from 'react-redux';
+import classNames from 'classnames';
+import { getSearchVideo } from '../actions/index';
+import '../assets/styles/Components/Search.scss';
 
 function Search(props) {
   const { isHome, getSearchVideo } = props;
-  const inputStyle = classNames("input", {
+  const inputStyle = classNames('input', {
     isHome,
   });
 
@@ -15,12 +15,12 @@ function Search(props) {
   };
 
   return (
-    <section className="main">
-      <h2 className="main__title">¿Qué quieres ver hoy?</h2>
+    <section className='main'>
+      <h2 className='main__title'>¿Qué quieres ver hoy?</h2>
       <input
-        type="text"
+        type='text'
         className={inputStyle}
-        placeholder="Search..."
+        placeholder='Search...'
         onChange={handleInput}
       />
     </section>

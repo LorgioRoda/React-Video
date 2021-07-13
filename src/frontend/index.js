@@ -1,12 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux"; //add redux
-import { createStore, compose } from "redux";
-import { Router } from "react-router";
-import { createBrowserHistory } from "history";
-import App from "./routes/App";
-import reducer from "./reducers/index";
-import "./assets/styles/App.scss";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'; //add redux
+import { createStore, compose } from 'redux';
+import { Router } from 'react-router';
+import { createBrowserHistory } from 'history';
+import App from './routes/App';
+import reducer from './reducers/index';
+import './assets/styles/App.scss';
 
 const history = createBrowserHistory();
 const preloadedState = window.__PRELOADED_STATE__;
@@ -21,5 +21,5 @@ ReactDOM.hydrate(
       <App />
     </Router>
   </Provider>,
-  document.getElementById("app")
+  document.getElementById('app'),
 );

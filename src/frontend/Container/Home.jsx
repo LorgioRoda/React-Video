@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import Carousel from "../Components/Carousel";
-import CarouselItem from "../Components/CarouselItem";
-import Categories from "../Components/Categories";
-import Search from "../Components/Search";
-import Header from "../Components/Header";
-import "../assets/styles/App.scss";
+import React from 'react';
+import { connect } from 'react-redux';
+import Carousel from '../Components/Carousel';
+import CarouselItem from '../Components/CarouselItem';
+import Categories from '../Components/Categories';
+import Search from '../Components/Search';
+import Header from '../Components/Header';
+import '../assets/styles/App.scss';
 
-const Home = ({ mylist, trends, originals, searchResult}) => {
+const Home = ({ mylist, trends, originals, searchResult }) => {
   return (
     <>
       <Header />
       <Search isHome />
       {searchResult.length > 0 && (
-        <Categories title="Your search">
+        <Categories title='Your search'>
           <Carousel>
             {searchResult.map((item) => (
               <CarouselItem key={item.id} {...item} />
@@ -22,7 +22,7 @@ const Home = ({ mylist, trends, originals, searchResult}) => {
         </Categories>
       )}
       {mylist.length > 0 && (
-        <Categories title="Mys videos">
+        <Categories title='Mys videos'>
           <Carousel>
             {mylist.map((item) => (
               <CarouselItem key={item.id} {...item} isList />
@@ -30,14 +30,14 @@ const Home = ({ mylist, trends, originals, searchResult}) => {
           </Carousel>
         </Categories>
       )}
-      <Categories title="Trends">
+      <Categories title='Trends'>
         <Carousel>
           {trends.map((item) => (
             <CarouselItem key={item.id} {...item} />
           ))}
         </Carousel>
       </Categories>
-      <Categories title="Original">
+      <Categories title='Original'>
         <Carousel>
           {originals.map((item) => (
             <CarouselItem key={item.id} {...item} />

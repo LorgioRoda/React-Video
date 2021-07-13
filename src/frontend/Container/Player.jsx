@@ -1,34 +1,36 @@
-import React, { useLayoutEffect } from "react";
-import { connect } from "react-redux";
-import "../assets/styles/Components/Player.scss";
-import { getVideoSource } from "../actions/index";
-import NotFound from "./NotFound";
+import React, { useLayoutEffect } from 'react';
+import { connect } from 'react-redux';
+import '../assets/styles/Components/Player.scss';
+import { getVideoSource } from '../actions/index';
+import NotFound from './NotFound';
+
 function Player(props) {
-  const { id = {} } = props.match.params
-  const hasPlaying = Object.keys(props.playing).length > 0
+  const { match, playing } = props;
+  const { id = {} } = match.params;
+  const hasPlaying = Object.keys(playing).length > 0;
 
-  useLayoutEffect(()=> {
-    props.getVideoSource(id)
-  }, [])
+  useLayoutEffect(() => {
+    props.getVideoSource(id);
+  }, []);
 
-    return hasPlaying ? (
-    <div className="Player">
+  return hasPlaying ? (
+    <div className='Player'>
       <video controls autoPlay>
-        <source src={props.playing.source} type="video/mp4" />
+        <source src={playing.source} type='video/mp4' />
       </video>
-      <div className="Player-back">
-        <button type="button" onClick={() => props.history.goBack() }>Back</button>
+      <div className='Player-back'>
+        <button type='button' onClick={() => props.history.goBack()}>Back</button>
       </div>
     </div>
-  ) : <NotFound/>
+  ) : <NotFound />;
 }
-const mapStateToProps = state => {
-    return {
-        playing: state.playing,
-    }
-}
+const mapStateToProps = (state) => {
+  return {
+    playing: state.playing,
+  };
+};
 const mapDispatchToProps = {
-    getVideoSource,
-}
+  getVideoSource,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Player)
+export default connect(mapStateToProps, mapDispatchToProps)(Player);

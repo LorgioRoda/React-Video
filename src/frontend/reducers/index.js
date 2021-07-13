@@ -1,31 +1,31 @@
 const reducer = (state, action) => {
   switch (action.type) {
-    case "SET_FAVORITE":
+    case 'SET_FAVORITE':
       return {
         ...state,
         mylist: [...state.mylist, action.payload],
       };
-    case "DELETE_FAVORITE":
+    case 'DELETE_FAVORITE':
       return {
         ...state,
         mylist: state.mylist.filter((items) => items.id !== action.payload),
       };
-    case "LOGIN_REQUEST":
+    case 'LOGIN_REQUEST':
       return {
         ...state,
         user: action.payload,
       };
-    case "LOGOUT_REQUEST":
+    case 'LOGOUT_REQUEST':
       return {
         ...state,
         user: action.payload,
       };
-    case "REGISTER_REQUEST":
+    case 'REGISTER_REQUEST':
       return {
         ...state,
         user: action.payload,
       };
-    case "GET_VIDEO_SOURCE":
+    case 'GET_VIDEO_SOURCE':
       return {
         ...state,
         playing:
@@ -33,16 +33,14 @@ const reducer = (state, action) => {
           state.originals.find((item) => item.id === Number(action.payload)) ||
           [],
       };
-    case "GET_SEARCH_VIDEO":
-      if (action.payload === "") return { ...state, searchResult: [] };
+    case 'GET_SEARCH_VIDEO':
+      if (action.payload === '') return { ...state, searchResult: [] };
 
       const list = [...state.trends, ...state.originals];
 
       return {
         ...state,
-        searchResult: list.filter((item) =>
-          item.title.toLowerCase().includes(action.payload.toLowerCase())
-        ),
+        searchResult: list.filter((item) => item.title.toLowerCase().includes(action.payload.toLowerCase())),
       };
     default:
       return state;
