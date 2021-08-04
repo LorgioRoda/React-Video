@@ -9,7 +9,7 @@ import Register from '../Container/Register';
 
 export default function App() {
   return (
-    <>
+    <div>
       <BrowserRouter>
         <Layout>
           <Switch>
@@ -21,6 +21,6 @@ export default function App() {
           </Switch>
         </Layout>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
